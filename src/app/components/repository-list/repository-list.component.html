@@ -1,0 +1,82 @@
+<!-- src/app/components/repository-list/repository-list.component.html -->
+
+<div class="container mx-auto py-4">
+    <!-- skeleton loader while loading -->
+    <div *ngIf="!(repositories$ | async)" class="mb-4">
+        <app-skeleton-loader></app-skeleton-loader>
+    </div>
+
+    <!-- repositories in a grid layout -->
+    <div *ngIf="(repositories$ | async) as repositories" class="grid grid-cols-2 gap-4">
+        <div *ngFor="let repo of repositories" class="card border rounded shadow">
+            <div class="p-4">
+                <a [href]="repo.html_url" target="_blank">
+                    <h3 class="text-xl-900 font-bold mb-2">{{ repo.name }}</h3>
+                </a>
+                <p class="text-black-900">{{ repo.description }}</p>
+            </div>
+            <!-- languages used -->
+            <div class="mt-auto px-4 pb-4">
+                <p class="text-sm font-semibold mb-2">Languages Used:</p>
+                <div class="flex flex-wrap">
+                    <span *ngFor="let lang of repo.languages" class="badge mr-2 mb-2">{{ lang }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination buttons -->
+    <div class="flex items-center justify-between mt-4">
+        <!-- Page size dropdown -->
+        <div>
+            <label for="pageSize">Page Size: </label>
+            <select id="pageSize" [(ngModel)]="pageSize" (change)="onPageSizeChange(pageSize)">
+                <option value="10">10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-center mt-4">
+        <!-- Pagination buttons -->
+        <div class="pagination-container">
+            <div class="flex items-center justify-center mt-4">
+                <ng-container *ngIf="getTotalPages() > 0">
+                    <button class="btn btn-outline" (click)="onPageChange(1)" [disabled]="currentPage <= 1">
+                        &laquo;&laquo;
+                    </button>
+                    <button class="btn btn-outline" (click)="onPageChange(currentPage - 1)" [disabled]="currentPage <= 1">
+                        &laquo;
+                    </button>
+
+                    <ng-container *ngFor="let page of generatePageNumbers()">
+                        <button class="btn btn-outline mx-1" [class.btn-primary]="currentPage === page" (click)="onPageChange(page)">
+                        {{ page }}
+                    </button>
+                    </ng-container>
+
+                    <button class="btn btn-outline" (click)="onPageChange(currentPage + 1)" [disabled]="currentPage >= getTotalPages()">
+                        &raquo;
+                    </button>
+                    <button class="btn btn-outline" (click)="onPageChange(getTotalPages())" [disabled]="currentPage >= getTotalPages()">
+                        &raquo;&raquo;
+                    </button>
+                </ng-container>
+            </div>
+        </div>
+
+    </div>
+    <div class="pagination-container">
+        <div class="flex items-center justify-center mt-4">
+            <button class="btn btn-outline" (click)="onPageChange(currentPage - 1)" [disabled]="currentPage <= 1">
+                &#8592; Older
+            </button>
+            <span class="mx-2">{{ currentPage }} of {{ getTotalPages() }}</span>
+            <button class="btn btn-outline" (click)="onPageChange(currentPage + 1)" [disabled]="currentPage >= getTotalPages()">
+               Newer &#8594;
+            </button>
+        </div>
+    </div>
+</div>`

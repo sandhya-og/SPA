@@ -1,5 +1,6 @@
-<div class="grid h-screen place-items-center">
-  <div class="font-bold text-3xl">
-    Fyle Internship Challenge
-  </div>
+<!-- src/app/app.component.html -->
+
+<div class="container mx-auto py-4">
+    <app-header (search)="onSearch($event)"></app-header>
+    <app-repository-list [username]="username"></app-repository-list>
 </div>

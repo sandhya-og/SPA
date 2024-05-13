@@ -1,0 +1,86 @@
+/* src/app/components/repository-list/repository-list.component.css */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.text-xl-900 {
+    color: #6699CC;
+    font-size: x-large;
+}
+
+.text-black {
+    color: #000;
+}
+
+.badge {
+    background-color: #6699CC;
+    color: #ffffff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.btn-outline {
+    border-color: #6b7280;
+    color: #6b7280;
+}
+
+.btn-outline:hover {
+    background-color: #e5e7eb;
+}
+
+.btn-primary {
+    background-color: #4f46e5;
+}
+
+.grid {
+    padding: 2rem;
+    column-gap: 50px;
+    row-gap: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.pagination-container {
+    display: block;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+}
+
+.btn-outline {
+    border: 1px solid #6b7280;
+    color: #6b7280;
+    background-color: transparent;
+}
+
+.btn-outline:hover {
+    background-color: #e5e7eb;
+}
+
+.btn-primary {
+    background-color: #4f46e5;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #4338ca;
+}
+
+.mx-1 {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+.btn-primary {
+    background-color: #4338ca;
+}

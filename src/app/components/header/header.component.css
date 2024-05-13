@@ -1,0 +1,10 @@
+/* src/app/components/header/header.component.css */
+
+.input {
+    padding: 0.5rem;
+}
+
+button {
+    background-color: rgb(69, 102, 221);
+    color: #ffffff
+}

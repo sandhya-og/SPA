@@ -1,27 +1,31 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AppComponent } from './AppComponent';
+import { RepositoryListComponent } from './components/repository-list/repository-list.component'; 
+import { HeaderComponent } from './components/header/header.component';
+import { SkeletonLoaderComponent } from './components/skeleton-loader/skeleton-loader.component'; // Import SkeletonLoaderComponent
+import { FormsModule } from '@angular/forms'; 
+import { HttpClientTestingModule } from '@angular/common/http/testing'; 
 
 describe('AppComponent', () => {
-  beforeEach(() => TestBed.configureTestingModule({
-    declarations: [AppComponent]
-  }));
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [AppComponent, HeaderComponent, RepositoryListComponent, SkeletonLoaderComponent], // Include SkeletonLoaderComponent
+      imports: [HttpClientTestingModule, FormsModule] 
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'fyle-frontend-challenge'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('fyle-frontend-challenge');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('fyle-frontend-challenge app is running!');
+  it(`should have the 'GitHub Repository Viewer' title`, () => {
+    expect(component.title).toEqual('GitHub Repository Viewer');
   });
 });
