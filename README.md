@@ -1,6 +1,57 @@
 # GithubRepoListing
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+## Project Setup
+
+Install dependencies using npm install.
+
+Ensure you have Angular CLI installed globally (npm install -g @angular/cli).
+
+Run the application locally using ng serve.
+
+## Usage:
+
+Open the application in your web browser.
+
+Enter a GitHub username in the search bar and click the "Search" button.
+
+The application will fetch and display the public repositories of the entered GitHub user.
+
+Use pagination controls to navigate through the repository list.
+
+On clicking the respository it will direct to that respository.
+
+If username exists, There will generate a github link directing to that profile.
+
+## Folder Structure
+
+/src
+├── /app
+│   ├── /components
+│   │   ├── /header
+│   │   │   ├── header.component.html
+│   │   │   ├── header.component.css
+│   │   │   └── header.component.ts
+│   │   ├── /repository-list
+│   │   │   ├── repository-list.component.html
+│   │   │   ├── repository-list.component.css
+│   │   │   └── repository-list.component.ts
+|   |   ├── /skeleton-loader
+│   │   │   ├── skeleton-loader.component.html
+│   │   │   ├── skeleton-loader.component.css
+│   │   │   └── skeleton-loader.component.ts
+│   ├── /models
+│   │   └── repository.model.ts
+│   ├── /services
+│   │   └── github.service.ts
+│   ├── app.component.ts
+├── /assets
+├── index.html
+
+## Additional Notes:
+
+Styling is done using Tailwind CSS. Refer to the Tailwind CSS documentation for customization.
+
+The application supports Angular 14+ and uses Angular CLI for project management.
 
 ## Development server
 
