@@ -18,93 +18,151 @@ The application will fetch and display the public repositories of the entered Gi
 
 Use pagination controls to navigate through the repository list.
 
-On clicking the respository it will direct to that respository.
+On clicking the respository, it will direct to that respository.
 
-If username exists, There will generate a github link directing to that profile.
+If username exists, it will generate a github link directing to that profile.
 
 ## Folder Structure
 
 ### Angular Application Structure
+
 #### 1. Components:
-Header Component:
 
-Description: Header component containing a search bar and button.
-Files:
+<b>Header Component</b>
+
+<b>Description:</b> Header component containing a search bar and button.
+
+<b>Files:</b>
+<li>
 header.component.html: HTML template for the header component.
+</li>
+<li>
 header.component.css: CSS styles specific to the header component.
+</li>
+<li>
 header.component.ts: TypeScript code for the header component.
+</li>
+<hr>
 
-Repository List Component:
+<b> Repository List Component:</b><br>
 
-Description: Component to display repositories with pagination.
-Files:
+<b>Description:</b> Component to display repositories with pagination.
+
+<b>Files:</b>
+<li>
 repository-list.component.html: HTML template for the repository list component.
+</li>
+<li>
 repository-list.component.css: CSS styles specific to the repository list component.
+</li>
+<li>
 repository-list.component.ts: TypeScript code for the repository list component.
+</li>
+<hr>
 
-2. Models:
-Repository Model:
-Description: Data model for repositories fetched from GitHub.
-File:
+<b>Skeleton Loader Component:</b><br>
+
+<b>Description:</b> Component to display a skeleton loader while data is being fetched.
+
+<b>Files:</b>
+<li>
+skeleton-loader.component.html: HTML template for the skeleton loader component.
+</li>
+<li>skeleton-loader.component.scss: SCSS styles specific to the skeleton loader component.</li>
+<li>skeleton-loader.component.ts: TypeScript code for the skeleton loader component.</li>
+
+#### 2. Models:
+
+<b>Repository Model</b>
+
+<b>Description:</b> Data model for repositories fetched from GitHub.
+
+<b>File:</b>
 repository.model.ts: TypeScript file defining the repository data model.
 
-4. Services:
-GitHub Service:
-Description: Angular service to interact with GitHub's API and fetch repositories.
-Files:
+#### 3. Services:
+
+<b>GitHub Service:</b>
+
+<b>Description:</b> Angular service to interact with GitHub's API and fetch repositories.
+
+<b>Files:</b>
 github.service.ts: TypeScript code for the GitHub service.
 
-6. Other Files:
-App Module:
+#### 4. Other Files:
+<li>
+<b>App Module:</b>
 
-Description: Angular module file where components and services are imported and declared.
-File:
+<b>Description:</b> Angular module file where components and services are imported and declared.<BR>
+
+<b>File:</b>
 app.module.ts: TypeScript file for the root module of the application.
-App Component:
+</li>
 
-Description: Main component of the application that hosts other components.
-Files:
+<li>
+<b>App Component</b>
+
+<b>Description:</b> Main component of the application that hosts other components.
+
+<b>Files:</b>
 app.component.ts: TypeScript code for the root component.
-App Routing:
+</li>
 
-Description: File defining routes for the application.
-File:
+<li>
+<b>App Routing</b>
+
+<b>Description:</b> File defining routes for the application.
+
+<b>File:</b>
 app.routes.ts: TypeScript file defining routes for the application.
-App Configuration:
+</li>
 
-Description: Configuration file for the application.
-File:
+<li>
+<b>App Configuration:</b>
+
+<b>Description:</b> Configuration file for the application.
+
+<b>File:</b>
 app.config.ts: TypeScript file containing application configurations.
-Testing Files:
+</li>
 
-Description: Files for testing components and services.
-Files:
+<li>
+<b>Testing Files</b>
+
+<b>Description:</b> Files for testing components and services.
+
+<b>Files:</b>
 header.component.spec.ts, repository-list.component.spec.ts, api.service.spec.ts, github.service.spec.ts: Testing files for respective components and services.
-Stylesheets:
+</li>
 
-Description: CSS files for styling components.
-Files:
+<li>
+<b>Stylesheets</b>
+
+<b>Description:</b> CSS files for styling components.
+
+<b>Files:</b>
 app.component.scss, app.component.css, header.component.css, repository-list.component.css: CSS files for respective components.
-Index HTML:
+</li>
 
-Description: HTML file as the entry point of the application.
-File:
+<li>
+<b>Index HTML</b>
+
+<b>Description:</b> HTML file as the entry point of the application.
+
+<b>File:</b>
 index.html: HTML file serving as the entry point of the application.
-Assets:
+</li>
 
-Description: Directory for storing static assets like images, icons, etc.
-Directory:
+<li>
+<b>Assets</b>
+
+<b>Description:</b> Directory for storing static assets like images, icons, etc.
+
+<b>Directory:</b>
 /assets: Directory for storing static assets.
+</li>
 
-5. Components:
-Skeleton Loader Component:
-Description: Component to display a skeleton loader while data is being fetched.
-Files:
-skeleton-loader.component.html: HTML template for the skeleton loader component.
-skeleton-loader.component.scss: SCSS styles specific to the skeleton loader component.
-skeleton-loader.component.ts: TypeScript code for the skeleton loader component.
-
-#### Note:
+### Note:
 
 Ensure all necessary modules, components, and services are imported and declared properly in the respective files.
 
@@ -139,6 +197,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Link
+
+https://fyle-internship-challenge-23--eclectic-bublanina-4a3851.netlify.app/
 
 ## Further help
 
